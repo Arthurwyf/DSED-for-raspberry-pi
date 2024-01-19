@@ -1,0 +1,12 @@
+[Unit]
+Description=Start audio recording on system startup.
+After=network-online.target
+
+[Service]
+ExecStart=/bin/bash /home/pi/AudioRecordingOnBoot/record_with_virtualenv.sh
+WorkingDirectory=/home/pi/AudioRecordingOnBoot
+StandardOutput=inherit
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
